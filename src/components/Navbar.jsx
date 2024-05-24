@@ -22,7 +22,7 @@ const Navbar = () => {
       <div >
         <h1 className='text-5xl font-Titlefont m-1 p-2 text-green-600'>
           <Link to='/'>
-          Tipp
+          TipyDo
           </Link>
         </h1>
       </div>

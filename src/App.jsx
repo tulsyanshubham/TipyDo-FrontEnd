@@ -10,6 +10,7 @@ import {
   Route
 } from "react-router-dom";
 import React from 'react';
+import Dashboard from './Components/Dashboard'
 
 function App() {
   // const url = process.env.REACT_APP_SERVER_URL;
@@ -26,6 +27,8 @@ function App() {
           <Route exact path="/signup" element={<SignUp/>} />
 
           <Route exact path="/login" element={<Login/>} />
+
+          <Route exact path="/dashboard" element={<Dashboard/>} />
 
         </Routes>
       </Router>
