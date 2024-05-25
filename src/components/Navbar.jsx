@@ -1,23 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const navigate = useNavigate();
-  const [logStatus, setLogStatus] = useState(false);
   const [dashboardDropdownVisible, setDashboardDropdownVisible] = useState(false);
   const [loginDropdownVisible, setLoginDropdownVisible] = useState(false);
-
-  useEffect(() => {
-    if (localStorage.getItem("auth-token")) {
-      setLogStatus(true);
-    }
-  }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem("auth-token");
-    setLogStatus(false);
-    navigate('/login/manager');
-  };
 
   const toggleDashboardDropdown = () => {
     setDashboardDropdownVisible(!dashboardDropdownVisible);
@@ -59,22 +45,13 @@ const Navbar = () => {
 
         <ul className='relative'>
           <li>
-            {!logStatus ? (
               <a
                 onClick={toggleLoginDropdown}
                 className='text-xl p-2 sm:pl-6 hover:text-green-400 hover:scale-110 duration-300 cursor-pointer'
               >
                 Login
               </a>
-            ) : (
-              <a
-                className='text-xl p-2  cursor-pointer'
-                onClick={handleLogout}
-              >
-                Logout
-              </a>
-            )}
-            {loginDropdownVisible && !logStatus && (
+            {loginDropdownVisible && (
               <ul className='absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg'>
                 <li className='px-0 sm:px-4 py-2 hover:bg-green-100'>
                   <Link to="/login/manager" onClick={toggleLoginDropdown}>Manager </Link>

@@ -25,7 +25,6 @@ function App() {
   return (
   <div>
     <Router>
-    <Navbar/>
    
    
     {/* <Howtip/> */}
@@ -34,22 +33,22 @@ function App() {
         <Routes>
 
           
-          <Route exact path="/" element={<Home/>} />
+          <Route exact path="/" element={<><Navbar/><Home/></>} />
 
-          <Route exact path="/signup" element={<SignUp/>} />
-          <Route exact path="/signup" element={<SignUp/>} />
+          <Route exact path="/signup" element={<><Navbar/><SignUp/></>} />
+          <Route exact path="/signup" element={<><Navbar/><SignUp/></>} />
 
           <Route exact path="/dashboard/manager" element={<Dashboard/>} />
 
-          <Route exact path="/login/manager" element={<Login/>} />
+          <Route exact path="/login/manager" element={<><Navbar/><Login/></>} />
 
-          <Route exact path="/login/employee" element={<EmployeeLogin/>} />
+          <Route exact path="/login/employee" element={<><Navbar/><EmployeeLogin/></>} />
 
           <Route exact path="/dashboard/employee" element={<EmplyeeDashboard/>} />
 
-          <Route exact path="/client/:username" element={<Client/>} />
+          <Route exact path="/client/:username" element={<><Navbar/><Client/></>} />
 
-          <Route exact path="/*" element={<Error/>} />
+          <Route exact path="/*" element={<><Navbar/><Error/></>} />
 
         </Routes>
       </Router>
