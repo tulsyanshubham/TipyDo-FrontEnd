@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SessionCard from './SessionCard';
+import LogoutNavbar from './LogoutNavbar';
 
 const EmployeeDashboard = () => {
   const [emp, setEmp] = useState({ name: "", managerusername: "", email: "" });

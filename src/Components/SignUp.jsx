@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
-  const busitype = ['Hotel', 'Valets', 'Bars', 'Restaurants', 'Salons', 'Non-Profits'];
+  const busitype = ['Hotel', 'Valets', 'Bars', 'Restaurant', 'Salon', 'Non-Profit'];
   const [user, setUser] = useState({ "ownername": "", "businessname": "", "businesstype": "", "email": "", "phone": "", "username": "", "password": "" });
   const navigate = useNavigate();
 

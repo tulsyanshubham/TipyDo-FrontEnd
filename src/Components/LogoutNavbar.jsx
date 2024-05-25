@@ -3,11 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const LogoutNavbar = ({navto}) => {
   const navigate = useNavigate();
-  useEffect(() => {
-    if (!localStorage.getItem("auth-token")) {
-        navigate('/login/${navto}');
-    }
-  }, []);
   const handleLogout = () => {
     localStorage.removeItem("auth-token");
     navigate(`/login/${navto}`);
@@ -20,7 +15,7 @@ const LogoutNavbar = ({navto}) => {
         <Link to="/"><img className='h-12 my-3 ml-2' src="/Logo.png" alt="Logo" /></Link>
       </div>
 
-      <div className='flex mr-5 text-lg sm:mr-20'>
+      {navto !== "client" ? (<div className='flex mr-5 text-lg sm:mr-20'>
         <ul className='relative'>
           <li>
               <a
@@ -31,7 +26,7 @@ const LogoutNavbar = ({navto}) => {
               </a>
           </li>
         </ul>
-      </div>
+      </div>):("")}
     </div>
   );
 };

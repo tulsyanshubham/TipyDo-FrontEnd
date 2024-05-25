@@ -46,7 +46,7 @@ function App() {
 
           <Route exact path="/dashboard/employee" element={<EmplyeeDashboard/>} />
 
-          <Route exact path="/client/:username" element={<><Navbar/><Client/></>} />
+          <Route exact path="/client/:username" element={<Client/>} />
 
           <Route exact path="/*" element={<><Navbar/><Error/></>} />
 

@@ -229,16 +229,12 @@ const Dashboard = () => {
           <div className="w-screen h-full">
             {/* manager details */}
             <div className='mt-4 px-4 flex flex-col  items-center justify-evenly flex-wrap gap-5'>
-              <div className='flex justify-center flex-col items-center'>
-                <p className="text-5xl flex justify-center pr-8 font-semibold items-center font-mono gap-3 text-blue-800">
-                  <span className='text-red-500 text-3xl px-2 py-1 rounded-5xl'> {mgr.businesstype} :</span>
-                  <span className='text-red-600 font-serif'>{mgr.businessname}</span>
-                </p>
-
-                {/* <p className="text-5xl flex justify-center pr-8 items-center text-blue-800"> {mgr.businesstype} </p> */}
-                <p className="text-2xl flex justify-center pr-8 items-center text-blue-800">Manager : {mgr.ownername} </p>
+              <div className="text-3xl sm:text-5xl flex flex-col justify-center pr-8 font-semibold items-center font-mono gap-3 text-white">
+                {/* <span className='bg-red-500 text-3xl px-4 py-1 rounded-3xl'> {mgr.businesstype} </span> */}
+                <span className='text-center'>{mgr.businessname}</span>
+                <span className="text-xl text-center sm:text-2xl flex justify-center">Manager : {mgr.ownername} </span>
               </div>
-              {qrURL && (<div className='flex mt-12 items-center justify-center  relative qr-box'>
+              {qrURL && (<div className='flex mt-5 items-center justify-center  relative qr-box'>
                 <canvas ref={canvasRef} className='qr-code border-green-500 border-4 border-dashed mb-2' />
                 <button className='bg-teal-500  p-2 rounded-lg qr-btn  absolute' onClick={handleQRDownload}>
                   <i className="fa-solid fa-download " style={{ color: "#000000" }} /> QR
@@ -258,7 +254,7 @@ const Dashboard = () => {
                       name="count"
                       value={count}
                       onChange={(e) => setCount(e.target.value)}
-                      className="h-8 w-12 rounded-md border ml-2 border-gray-300 pl-3 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
+                      className="h-8 w-[3rem] rounded-md border ml-2 border-gray-300 pl-3 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
                     />
                     <button className='px-4 border-2 bg-green-400 border-green-200 rounded-lg hover:bg-green-600 text-black ml-2' type='submit'>Save</button>
 
@@ -266,20 +262,18 @@ const Dashboard = () => {
                 </form>
               </div>
               <div>
-                <Link to={`${cururl}/client/${mgr.username}`}><button className='bg-teal-400 px-2 py-2 rounded-xl hover:scale-110 duration-300 border-2 border-teal-200'>View Clients</button></Link>
+                <Link to={`${cururl}/client/${mgr.username}`}><button className='bg-teal-400 text-xl px-3 py-1 rounded-xl hover:scale-110 duration-300 border-2 border-teal-200'>View Client Page </button></Link>
               </div>
             </div>
 
 
-            <div className='flex flex-col mt-16 mb-5 my-5 items-center justify-center gap-8'>
-              <p className="text-4xl font-bold flex justify-center items-center underline text-teal-500">Employee Registration</p>
+            <div className='flex mt-16 mb-7 items-center justify-center gap-8'>
+              <div className="text-4xl font-bold flex justify-center items-center underline text-teal-500">Employee Registration</div>
               <button onClick={toggleModal} className="bg-teal-500 p-2 rounded-lg">
                 <i className="fa-solid fa-user-plus" style={{ color: "#000000" }} /> Employee
               </button>
-
-
-
             </div>
+
             {/* <div className="mt-20 float-start ml-10"> */}
             <section className="flex justify-center items-center">
               <div className="">
