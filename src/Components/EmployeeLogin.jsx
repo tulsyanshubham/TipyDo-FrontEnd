@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 
-const Login = () => {
-  const [user, setUser] = useState({ username: "", password: "" });
+const EmployeeLogin = () => {
+  const [user, setUser] = useState({ email: "", password: "" });
   const navigate = useNavigate();
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -10,21 +10,21 @@ const Login = () => {
   }
   const serverurl = import.meta.env.VITE_SERVER_URL;
 
-  useEffect(()=>{
-    if (localStorage.getItem("auth-token")) {
-      navigate('/dashboard/manager')
+  useEffect(() => {
+    if (localStorage.getItem("emp-auth-token")) {
+      navigate('/dashboard/employee')
     }
-  },[])
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     // const {name,email,password} = user;
-    const response = await fetch(`${serverurl}/api/login`, {
+    const response = await fetch(`${serverurl}/api/employee/login`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'username':user.username,
-        'password':user.password
+        'email': user.email,
+        'password': user.password
       },
       // body: JSON.stringify( user )
     });
@@ -35,9 +35,9 @@ const Login = () => {
     // expiryDate.setTime(expiryDate.getTime() + (24 * 60 * 60 * 1000)); // 24 hours from now
     // document.cookie = `auth-token=${json.token}; expires=${expiryDate.toUTCString()}`;
     if (json.token) {
-      localStorage.setItem("auth-token", json.token);
+      localStorage.setItem("emp-auth-token", json.token);
       // props.showAlert("Account Created","success");
-      navigate('/dashboard/manager')
+      navigate('/dashboard/employee')
     }
     // else {
     //   props.showAlert("Invalid Details","danger")
@@ -50,45 +50,34 @@ const Login = () => {
 
         <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
 
-          <h2 className="text-2xl font-bold leading-tight text-black">Sign in to your account</h2>
-          <p className="mt-2text-sm text-gray-600 ">
-            don't have an account?{' '}
-            <Link
-              to="/signup"
-              title=""
-              className="font-semibold text-black transition-all duration-200 hover:underline"
-            >
-              Create a free account
-            </Link>
-          </p>
-          <form action="#" method="POST" className="mt-8" onSubmit={handleSubmit}>
+          <h1 className="font-semibold text-2xl text-black transition-all duration-200 hover:underline">Employee Login</h1>
+
+          <form className="mt-8" onSubmit={handleSubmit} >
             <div className="space-y-5">
               <div>
-                <label htmlFor="" className="text-base font-medium text-gray-900">
+                <label htmlFor="email" className="text-base font-medium text-gray-900">
                   {' '}
-                  {' '} Username{' '}
+                  {' '} Email{' '}
                 </label>
                 <div className="mt-2">
                   <input
                     className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                     type="text"
-                    placeholder="Username"
-                    name="username"
+                    placeholder="email"
+                    name="email"
+                    id="email"
                     onChange={handleChange}
+                    value={user.email}
                     required
                   ></input>
                 </div>
               </div>
               <div>
                 <div className="flex items-center justify-between">
-                  <label htmlFor="" className="text-base font-medium text-gray-900">
+                  <label htmlFor="Password" className="text-base font-medium text-gray-900">
                     {' '}
                     Password{' '}
                   </label>
-                  <a href="#" title="" className="text-sm font-semibold text-black hover:underline">
-                    {' '}
-                    Forgot password?{' '}
-                  </a>
                 </div>
                 <div className="mt-2">
                   <input
@@ -96,7 +85,9 @@ const Login = () => {
                     type="password"
                     placeholder="Password"
                     name="password"
+                    id="password"
                     onChange={handleChange}
+                    value={user.password}
                     required
                   ></input>
                 </div>
@@ -111,8 +102,8 @@ const Login = () => {
               </div>
             </div>
           </form>
-          <div className="mt-3 space-y-3">
-            {/* <button
+          {/* <div className="mt-3 space-y-3">
+            <button
             type="button"
             className="relative inline-flex w-full items-center justify-center rounded-md border border-gray-400 bg-white px-3.5 py-2.5 font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black focus:outline-none"
           >
@@ -125,8 +116,8 @@ const Login = () => {
           >
            
             Sign in with Facebook
-          </button> */}
-          </div>
+          </button>
+          </div> */}
         </div>
       </div>
     </section>
@@ -134,4 +125,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default EmployeeLogin

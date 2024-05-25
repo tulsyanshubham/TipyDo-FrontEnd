@@ -10,11 +10,12 @@ const SignUp = () => {
     setUser({ ...user, [e.target.name]: e.target.value });
     console.log(user)
   }
+  const serverurl = import.meta.env.VITE_SERVER_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     // const {name,email,password} = user;
-    const response = await fetch(`http://localhost:5000/api/signup`, {
+    const response = await fetch(`${serverurl}/api/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -30,17 +31,17 @@ const SignUp = () => {
     if (json.token) {
       localStorage.setItem("auth-token", json.token);
       // props.showAlert("Account Created","success");
-      navigate('/dashboard')
+      navigate('/dashboard/manager')
     }
     // else {
     //   props.showAlert("Invalid Details","danger")
     // }
   }
-  useEffect(()=>{
+  useEffect(() => {
     if (localStorage.getItem("auth-token")) {
-      navigate('/dashboard')
+      navigate('/dashboard/manager')
     }
-  },[])
+  }, [])
 
   return (
     <div>
@@ -172,6 +173,8 @@ const SignUp = () => {
                       onChange={handleChange}
                       name='username'
                       minLength={5}
+                      pattern="^[^\s]+$"
+                      title="No spaces allowed"
                       // title='Minimum length should be 5'
                       required
                     ></input>
