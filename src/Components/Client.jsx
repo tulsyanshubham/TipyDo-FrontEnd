@@ -103,7 +103,7 @@ const Client = () => {
   }, [])
 
   return (
-    <div className='overflow-x-hidden pt-[10vh] min-h-[100vh]'>
+    <div className='overflow-x-hidden pt-[10vh] min-h-[100vh] bg-gray-800'>
       <div className='flex flex-col space-y-4 items-center mt-4'>
         <div className='flex justify-center flex-col items-center'>
           <p className="text-5xl flex justify-center pr-8 font-semibold items-center font-mono gap-3 text-blue-800">

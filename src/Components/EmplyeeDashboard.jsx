@@ -146,14 +146,14 @@ const EmployeeDashboard = () => {
   }, []);
 
   return (
-    <div className='w-[97vw] min-h-screen m-4'>
+    <div className='w-[97vw] min-h-screen m-4 bg-gray-800'>
       <div className='flex flex-col items-center text-3xl font-semibold justify-center text-blue-700'>
         <h1>Employee Dashboard</h1>
         <p className='text-green-400 pt-6'>{emp.name}</p>
       </div>
 
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:pt-10">
-        <label htmlFor="employeeType" className="text-base font-medium text-gray-900 text-xl">
+        <label htmlFor="employeeType" className="text-base font-medium text-white text-xl">
           Add Session
         </label>
         <select

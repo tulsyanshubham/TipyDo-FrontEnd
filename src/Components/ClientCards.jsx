@@ -24,7 +24,7 @@ export default function ClientCards({ employeeData }) {
   }, [])
 
   return (
-    <div>
+    <div className='bg-gray-800'>
       <div className='mt-16 '>
         <div className=" shadow-md rounded-lg bg-teal-100 overflow-hidden m-4 w-80 relative">
           <div className="p-4">

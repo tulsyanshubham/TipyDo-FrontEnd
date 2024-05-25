@@ -46,16 +46,16 @@ const EmployeeLogin = () => {
 
   return (
     <section className="">
-      <div className="flex items-center justify-center h-[100vh] px-4 pt-10 sm:px-6 sm:py-16 lg:px-8 bg-green-50">
+      <div className="flex items-center justify-center h-[100vh] px-4 pt-10 sm:px-6 sm:py-16 lg:px-8 bg-gray-800">
 
         <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
 
-          <h1 className="font-semibold text-2xl text-black transition-all duration-200 hover:underline">Employee Login</h1>
+          <h1 className="font-semibold text-2xl text-white transition-all duration-200 hover:underline">Employee Login</h1>
 
           <form className="mt-8" onSubmit={handleSubmit} >
             <div className="space-y-5">
               <div>
-                <label htmlFor="email" className="text-base font-medium text-gray-900">
+                <label htmlFor="email" className="text-base font-medium text-white">
                   {' '}
                   {' '} Email{' '}
                 </label>
@@ -74,7 +74,7 @@ const EmployeeLogin = () => {
               </div>
               <div>
                 <div className="flex items-center justify-between">
-                  <label htmlFor="Password" className="text-base font-medium text-gray-900">
+                  <label htmlFor="Password" className="text-base font-medium text-white">
                     {' '}
                     Password{' '}
                   </label>

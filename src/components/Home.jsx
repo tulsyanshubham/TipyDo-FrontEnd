@@ -44,7 +44,7 @@ const Home = () => {
   return (
     <div className='w-[100%] h-full bg-gray-900'>
     <div className='flex flex-col sm:flex-row  w-[97vw] '>
-      <div className='flex flex-col pt-20 justify-center items-center'>
+      <div className='flex flex-col pt-20  '>
         <p className='text-4xl pt-10 sm:pt-40 pb-8 sm:text-6xl pl-10 text-blue-800  font-semibold'>India's <span className='text-green-400'>#1</span>  <br /> End-to-End <br /> Digital Tipping Platform <br /> For<span className='text-white'>.</span>
           <TypeAnimation
             className='text-green-400' sequence={[
@@ -61,8 +61,8 @@ const Home = () => {
             duration={200}
 
           /></p>
-          <div className=''>
-          <button className='text-xl bg-green-300 border-2 rounded-xl border-green-200 hover:scale-110 duration-300 py-4 px-10'>How to tip??</button>
+          <div className='ml-10'>
+          <button className='text-xl bg-green-300 border-2 rounded-xl border-green-200 hover:scale-110 duration-300 py-2 px-8'>How to tip??</button>
           </div>
           
       </div>
@@ -70,7 +70,7 @@ const Home = () => {
 
      
 
-      <div className='sm:w-full mr-0 ml-12 sm:ml-72 max-w-[300px] h-[300px] sm:max-w-[500px] sm:h-[400px] mt-10 sm:mt-40 relative shadow-xl rounded-3xl shadow-gray-700 '>
+      <div className='sm:w-full mr-0 ml-36 max-w-[300px] h-[300px] sm:max-w-[500px] sm:h-[400px] mt-10 sm:mt-40 relative shadow-xl rounded-3xl shadow-gray-700 '>
         <div
           style={{
             backgroundImage: `url(${img[currentSlide].url})`,
@@ -108,7 +108,7 @@ const Home = () => {
 
        {/* //hotelgrid */}
 
-      <section className='m-5 bg-slate-100  rounded-xl p-5'>
+      <section className='m-5 bg-slate-800  rounded-xl p-5'>
       <div className='mt-2 mb-10 flex flex-col justify-center items-center'>
           <p className='text-3xl text-blue-800 font-semibold '> Where to display your <span className='text-green-600 font-bold'>QR codes:</span> </p>
 
@@ -167,7 +167,7 @@ const Home = () => {
               
               <div className='grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-36 text-center py-8 px-12 sm:px-0 mt-5'>
 
-              <div className='am:pt-10 hover:scale-110 duration-300'>
+              <div className='sm:pt-10 hover:scale-110 duration-300'>
             <img src="/res1.svg" className='h-28 sm:ml-10 ' alt="" />
             <p className='text-blue-700 font-semibold text-xl'>Team tips are safe & <br /> secure with eTip. <br /> <span className='text-xs text-blue-500'>No more worrying about misplacing <br /> physical cash tips. Tips are securely <br /> transferred to team members.</span> </p>
           </div>
@@ -188,9 +188,9 @@ const Home = () => {
               </div>
 
 
-              <section className='m-5 bg-slate-100  rounded-xl p-5'>
+              <section className='m-5 bg-slate-800  rounded-xl p-5'>
       <div className='mt-2 mb-10 flex flex-col justify-center items-center'>
-          <p className='text-3xl text-blue-800 font-semibold '>Digital tip jars for your restaurant </p>
+          <p className='text-3xl text-blue-600 font-semibold '>Digital tip jars for your restaurant </p>
 
                  <div className='grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-36 text-center py-8 px-12 sm:px-0 mt-5'>
             
@@ -209,7 +209,7 @@ const Home = () => {
           </div>
 
           
-          <div className='shadow-md sm:mb-0 mb-56 shadow-gray-500 rounded-md duration-200 hover:scale-105'>
+          <div className='shadow-md sm:mb-10 mb-56 shadow-gray-500 rounded-md duration-200 hover:scale-105'>
               <img className='rounded-md duration-200 hover:scale-105 h-56' src="/resj3.jpg" alt="" />
               <div className='flex items-center justify-center'>
                  <p className='text-green-600 font-semibold py-4'>Added to your deliveries</p>

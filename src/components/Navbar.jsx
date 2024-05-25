@@ -80,7 +80,7 @@ const Navbar = () => {
                   <Link to="/login/manager" onClick={toggleLoginDropdown}>Manager </Link>
                 </li>
                 <li className='px-4 py-2 hover:bg-green-100'>
-                  <Link to="/emplogin" onClick={toggleLoginDropdown}>Employee </Link>
+                  <Link to="/login/employee" onClick={toggleLoginDropdown}>Employee </Link>
                 </li>
               </ul>
             )}

@@ -46,11 +46,11 @@ const Login = () => {
 
   return (
     <section className="">
-      <div className="flex items-center justify-center h-[100vh] px-4 pt-10 sm:px-6 sm:py-16 lg:px-8 bg-green-50">
+      <div className="flex items-center justify-center h-[100vh] px-4 pt-10 sm:px-6 sm:py-16 lg:px-8 bg-gray-800">
 
         <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
 
-          <h2 className="text-2xl font-bold leading-tight text-black">Sign in to your account</h2>
+          <h2 className="text-2xl font-bold leading-tight text-white">Sign in to your account</h2>
           <p className="mt-2text-sm text-gray-600 ">
             don't have an account?{' '}
             <Link
@@ -64,7 +64,7 @@ const Login = () => {
           <form action="#" method="POST" className="mt-8" onSubmit={handleSubmit}>
             <div className="space-y-5">
               <div>
-                <label htmlFor="" className="text-base font-medium text-gray-900">
+                <label htmlFor="" className="text-base font-medium text-white">
                   {' '}
                   {' '} Username{' '}
                 </label>
@@ -81,7 +81,7 @@ const Login = () => {
               </div>
               <div>
                 <div className="flex items-center justify-between">
-                  <label htmlFor="" className="text-base font-medium text-gray-900">
+                  <label htmlFor="" className="text-base font-medium text-white">
                     {' '}
                     Password{' '}
                   </label>

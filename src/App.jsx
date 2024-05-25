@@ -17,6 +17,8 @@ import EmployeeLogin from './Components/EmployeeLogin'
 import EmplyeeDashboard from './Components/EmplyeeDashboard'
 import Error from './Components/Error'
 import Howtip from './Components/Howtip'
+import EmployeeCard from './Components/EmployeeCard'
+import SessionCard from './Components/SessionCard'
 
 function App() {
 
@@ -24,6 +26,8 @@ function App() {
   <div>
     <Router>
     <Navbar/>
+   
+   
     {/* <Howtip/> */}
     {/* <Success/> */}
     {/* <Failure/> */}

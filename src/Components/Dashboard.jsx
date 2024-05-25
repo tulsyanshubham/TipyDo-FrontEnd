@@ -220,7 +220,7 @@ const Dashboard = () => {
   }
 
   return (
-    <div className='overflow-x-hidden pt-[10vh] min-h-[100vh]'>
+    <div className='overflow-x-hidden pt-[10vh] min-h-[100vh] bg-gray-800'>
       {/* {mgr.businessname && ( */}
       <div className="w-screen h-full">
         {/* manager details */}
@@ -249,7 +249,7 @@ const Dashboard = () => {
           <div>
           <form onSubmit={handleCountSubmit} className=''>
           <div className=" ml-10 gap-1 ">
-            <label htmlFor="count" className="text-base  font-medium text-gray-900">
+            <label htmlFor="count" className="text-base  font-medium text-white">
               Total number of Tables/Rooms
             </label>
             <input
