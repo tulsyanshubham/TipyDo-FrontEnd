@@ -31,13 +31,15 @@ const Navbar = () => {
               Dashboard
             </a>
             {dashboardDropdownVisible && (
-              <ul className='absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg'>
-                <li className='px-4 py-2 hover:bg-green-100'>
-                  <Link to="/dashboard/manager" onClick={toggleDashboardDropdown}>Manager</Link>
-                </li>
-                <li className='px-4 py-2 hover:bg-green-100'>
-                  <Link to="/dashboard/employee" onClick={toggleDashboardDropdown}>Employee</Link>
-                </li>
+              <ul className='absolute left-2 mt-2 w-35 bg-white border border-gray-200 rounded shadow-lg'>
+                <Link to="/dashboard/manager" onClick={toggleDashboardDropdown}>
+                  <li className='px-4 py-2 hover:bg-green-100'>
+                    Manager
+                  </li>
+                </Link>
+                <Link to="/dashboard/employee" onClick={toggleDashboardDropdown}><li className='px-4 py-2 hover:bg-green-100'>
+                  Employee
+                </li></Link>
               </ul>
             )}
           </li>
@@ -45,20 +47,20 @@ const Navbar = () => {
 
         <ul className='relative'>
           <li>
-              <a
-                onClick={toggleLoginDropdown}
-                className='text-xl p-2 sm:pl-6 hover:text-green-400 hover:scale-110 duration-300 cursor-pointer'
-              >
-                Login
-              </a>
+            <a
+              onClick={toggleLoginDropdown}
+              className='text-xl p-2 sm:pl-6 hover:text-green-400 hover:scale-110 duration-300 cursor-pointer'
+            >
+              Login
+            </a>
             {loginDropdownVisible && (
-              <ul className='absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg'>
-                <li className='px-0 sm:px-4 py-2 hover:bg-green-100'>
-                  <Link to="/login/manager" onClick={toggleLoginDropdown}>Manager </Link>
-                </li>
-                <li className='px-4 py-2 hover:bg-green-100'>
-                  <Link to="/login/employee" onClick={toggleLoginDropdown}>Employee </Link>
-                </li>
+              <ul className='absolute left-0 mt-2 w-35 bg-white border border-gray-200 rounded shadow-lg'>
+                <Link to="/login/manager" onClick={toggleLoginDropdown}><li className='px-0 sm:px-4 py-2 hover:bg-green-100'>
+                  Manager
+                </li></Link>
+                <Link to="/login/employee" onClick={toggleLoginDropdown}><li className='px-4 py-2 hover:bg-green-100'>
+                  Employee
+                </li></Link>
               </ul>
             )}
           </li>
