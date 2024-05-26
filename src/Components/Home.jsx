@@ -2,8 +2,22 @@
 import { TypeAnimation } from 'react-type-animation';
 import { useState, useEffect } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+import ScrollReveal from 'scrollreveal';
 
 const Home = () => {
+  useEffect(() => {
+    const sr = ScrollReveal({
+      reset: false,
+      distance: '80px',
+      duration: 1500,
+      delay: 100
+    });
+    sr.reveal('.toporigin', { origin: 'top' });
+    sr.reveal('.bottomorigin', { origin: 'bottom' });
+    sr.reveal('.leftorigin', { origin: 'left' });
+    sr.reveal('.rightorigin', { origin: 'right' });
+  },[])
+  
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -42,10 +56,10 @@ const Home = () => {
   }, [img.length]);
 
   return (
-    <div className='w-[100%] h-full bg-gray-900'>
+    <div className='w-[100%] h-full bg-gray-900 pb-5 overflow-x-hidden'>
       <div className='flex flex-col sm:flex-row w-[100%] '>
         <div className='flex flex-wrap w-[100%] h-[100vh]'>
-          <div className='flex flex-col justify-center w-[100vw] sm:w-[49vw] h-[50vh] sm:h-[100vh] pl-10 pt-16'>
+          <div className='flex flex-col justify-center w-[100vw] sm:w-[49vw] h-[50vh] sm:h-[100vh] pl-10 pt-20 leftorigin'>
             <p className='text-4xl sm:text-6xl text-blue-800  font-semibold'>India's <span className='text-green-400'>#1</span>  <br /> End-to-End <br /> Digital Tipping Platform <br /> For<span className='text-white'>.</span>
               <TypeAnimation
                 className='text-green-400' sequence={[
@@ -67,7 +81,7 @@ const Home = () => {
             </div>
 
           </div>
-          <div className='w-[100vw] sm:w-[50vw] h-[50vh] sm:h-[100vh] flex items-center justify-center'>
+          <div className='w-[100vw] sm:w-[50vw] h-[50vh] sm:h-[100vh] flex items-center justify-center pt-20 rightorigin'>
             <div className='w-[100%] max-w-[300px] h-[300px] sm:max-w-[500px] sm:h-[400px] relative shadow-xl rounded-3xl shadow-gray-700 '>
               <div
                 style={{
@@ -187,8 +201,7 @@ const Home = () => {
         </div>
       </div>
 
-
-      <section className='m-5 bg-slate-800  rounded-xl p-5'>
+      <section className='mt-5 mx-5 bg-slate-800  rounded-xl p-5'>
         <div className='mt-2 mb-10 flex flex-col justify-center items-center'>
           <p className='text-3xl text-blue-600 font-semibold '>Digital tip jars for your restaurant </p>
 
