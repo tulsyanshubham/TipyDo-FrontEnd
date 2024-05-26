@@ -4,3 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+textarea:focus, input:focus {
+    color: #ffffff;
+}
+
+input, select, textarea{
+    color: #dfdfdf;
+}
+option{
+    color: black;
+}

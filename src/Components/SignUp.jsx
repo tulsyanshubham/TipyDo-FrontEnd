@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
+import Failure from './Failure';
 
 const SignUp = () => {
   const busitype = ['Hotel', 'Valets', 'Bars', 'Restaurant', 'Salon', 'Non-Profit'];
   const [user, setUser] = useState({ "ownername": "", "businessname": "", "businesstype": "", "email": "", "phone": "", "username": "", "password": "" });
+  // const [status, setStatus] = useState({success: true, msg: ""});
+  const [alert, setAlert] = useState(null);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -14,6 +17,7 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // setStatus({success: true, msg: ""});
     // const {name,email,password} = user;
     const response = await fetch(`${serverurl}/api/signup`, {
       method: 'POST',
@@ -24,6 +28,9 @@ const SignUp = () => {
     });
     const json = await response.json();
     console.log(json)
+    if(!json.success){
+      showAlert("Username alreay taken","danger")
+    }
     // const expiryDate = new Date();
 
     // expiryDate.setTime(expiryDate.getTime() + (24 * 60 * 60 * 1000)); // 24 hours from now
@@ -37,6 +44,15 @@ const SignUp = () => {
     //   props.showAlert("Invalid Details","danger")
     // }
   }
+
+  const showAlert = (message,type) => {
+    setAlert({
+      msg : message,
+      type : type
+    })
+    setTimeout(()=>{setAlert(null)},1500)
+  }
+
   useEffect(() => {
     if (localStorage.getItem("auth-token")) {
       navigate('/dashboard/manager')
@@ -45,8 +61,8 @@ const SignUp = () => {
 
   return (
     <div>
-      <section className="">
-
+      <section >
+      <Failure alert ={alert} />
         <div className="flex items-center justify-center px-4 pt-[13vh] pb-4 bg-gray-800" style={{ minHeight: "100vh" }}>
 
           <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
