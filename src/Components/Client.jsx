@@ -92,6 +92,7 @@ const Client = () => {
           for (let j = 0; j < employees.length; j++) {
             if (session[i].email === employees[j].email) {
               setdisplayemps(prev => [...prev, employees[j]]);
+              console.log(employees[j].upiId)
             }
           }
         }

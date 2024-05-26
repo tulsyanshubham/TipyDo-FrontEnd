@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 export default function ClientCards({ employeeData }) {
-  const { name, employeetype, worktype, dateofjoining, email, upiId, image } = employeeData;
+  const { name, employeetype, worktype, dateofjoining, email,upiname, upiId, image } = employeeData;
   const [reqDate, setReqDare] = useState('');
   const [UPI, setUPI] = useState('');
 
@@ -18,9 +18,10 @@ export default function ClientCards({ employeeData }) {
     setReqDare(`${day}-${month}-${year}`);
 
     //upi url
-    const tempname = name.replace(" ", "%20");
+    const tempname = upiname.replace(" ", "%20");
     const tempupi = `upi://pay?pa=${upiId}&pn=${tempname}&cu=INR&tn=Transaction%20Note`
     setUPI(tempupi)
+    console.log(tempupi)
   }, [])
 
   return (
