@@ -110,7 +110,8 @@ const Home = () => {
 
       <div className='flex flex-col sm:flex-row justify-between items-center '>
         <img className='hover:scale-110 duration-300 ml-0 sm:ml-56 mt-20 sm:mt-56' src="/Revolutionizing-Tipping-Graphic.webp" alt="" />
-        <p className='text-4xl text-blue-800 font-semibold pl-4 mr-0 sm:mr-56 pb-20 '>No <span className='font-semibold'>App</span>  needed, Just your <span className='text-green-600 font-bold sm:flex items-center justify-center'>Phone</span> </p>
+        <p className='text-4xl text-blue-800 font-semibold pl-4 mr-0 sm:mr-56 pb-20 '>No <span className='font-semibold'>App</span>  needed, Just your <span className='text-green-600 font-bold sm:flex items-center justify-center'>Phone</span> <span className='text-white text-lg pt-2 sm:flex items-center justify-center'>Cashless Tips,Boundless  <span className='text-green-600'>-Gratitude.</span> </span>  </p>
+        <p></p>
       </div>
 
       {/* <div className='flex  items-center mb-28'>
