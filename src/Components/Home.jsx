@@ -77,7 +77,7 @@ const Home = () => {
 
               /></p>
             <div className='ml-5 sw:ml-10 mt-10'>
-              <button className='text-xl bg-green-300 border-2 rounded-xl border-green-200 hover:scale-110 duration-300 py-2 px-8'>How to tip??</button>
+              <a href="https://www.canva.com/design/DAGF_HigyWE/zZ9a9wnLlU5CwgyAKcztdw/edit?utm_content=DAGF_HigyWE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target='_blank'><button className='text-xl bg-green-300 border-2 rounded-xl border-green-200 hover:scale-110 duration-300 py-2 px-8'>How to tip??</button></a>
             </div>
 
           </div>
