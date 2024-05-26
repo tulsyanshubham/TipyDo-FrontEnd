@@ -11,7 +11,7 @@ const Dashboard = () => {
   const [mgr, setMgr] = useState({});
   const [employees, setEmployees] = useState([]);
   const [error, setError] = useState(""); //TODO: print this error msg in case of server error
-  const [qrURL, setQrURL] = useState(false);
+  // const [qrURL, setQrURL] = useState(false);
   const [cururl, setCururl] = useState("");
   const [count, setCount] = useState(0);
   const [alert, setAlert] = useState(null);
@@ -93,7 +93,10 @@ const Dashboard = () => {
       }
     }, error => {
       if (error) console.error('Error generating QR code:', error);
-      else setQrURL(true);
+      // else{
+      //   setTimeout(() => { setQrURL(true) }, 3000)
+      //   setQrURL(false);
+      // } 
     });
   };
 
@@ -248,13 +251,13 @@ const Dashboard = () => {
                 <span className='text-center'>{mgr.businessname}</span>
                 <span className="text-xl text-center sm:text-2xl flex justify-center">Manager : {mgr.ownername} </span>
               </div>
-              {qrURL && (<div className='flex mt-5 items-center justify-center  relative qr-box'>
+              <div className='flex mt-5 items-center justify-center  relative qr-box'>
                 <canvas ref={canvasRef} className='qr-code border-green-500 border-4 border-dashed mb-2' />
                 <button className='bg-teal-500  p-2 rounded-lg qr-btn  absolute' onClick={handleQRDownload}>
                   <i className="fa-solid fa-download " style={{ color: "#000000" }} /> QR
                 </button>
 
-              </div>)}
+              </div>
 
               <div>
                 <form onSubmit={handleCountSubmit} className=''>
