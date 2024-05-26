@@ -3,6 +3,7 @@ import EmployeeCard from './EmployeeCard';
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import QRCode from "qrcode";
 import LogoutNavbar from './LogoutNavbar';
+import Failure from './Failure';
 
 const Dashboard = () => {
   const serverurl = import.meta.env.VITE_SERVER_URL;
@@ -13,6 +14,7 @@ const Dashboard = () => {
   const [qrURL, setQrURL] = useState(false);
   const [cururl, setCururl] = useState("");
   const [count, setCount] = useState(0);
+  const [alert, setAlert] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
   const canvasRef = useRef();
@@ -43,6 +45,14 @@ const Dashboard = () => {
     } catch (error) {
       setError(error.message);
     }
+  }
+
+  const showAlert = (message, type) => {
+    setAlert({
+      msg: message,
+      type: type
+    })
+    setTimeout(() => { setAlert(null) }, 2500)
   }
 
   const fetchemployee = async (username) => {
@@ -144,43 +154,46 @@ const Dashboard = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault()
-    let token = "";
-    if (localStorage.getItem("auth-token")) {
-      token = localStorage.getItem("auth-token")
+    try {
+      let token = "";
+      if (localStorage.getItem("auth-token")) {
+        token = localStorage.getItem("auth-token")
+        console.log(token)
+      }
+      else {
+        navigate('/login/manager')
+      }
       console.log(token)
+      const response = await fetch(`${serverurl}/api/employee`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'auth-token': `${token}`
+        },
+        body: JSON.stringify(formData),
+      });
+      const json = await response.json()
+      console.log(json)
+      // Add new employee to the employees array
+      const newEmployee = { ...formData };
+      setEmployees([...employees, newEmployee]);
+      // Reset form data and close modal
+      setFormData({
+        managerusername: mgr.username,
+        name: '',
+        employeetype: '',
+        workType: '',
+        joiningDate: '',
+        email: '',
+        phoneNumber: '',
+        upiID: '',
+        upiname: '',
+        image: '',
+      });
+      setModal(false);
+    } catch (error) {
+      showAlert("Employee with same email present", "danger")
     }
-    else {
-      navigate('/login/manager')
-    }
-    console.log(token)
-    const response = await fetch(`${serverurl}/api/employee`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'auth-token': `${token}`
-      },
-      body: JSON.stringify(formData),
-    });
-    const json = await response.json()
-    console.log(json)
-
-    // Add new employee to the employees array
-    const newEmployee = { ...formData };
-    setEmployees([...employees, newEmployee]);
-    // Reset form data and close modal
-    setFormData({
-      managerusername: mgr.username,
-      name: '',
-      employeetype: '',
-      workType: '',
-      joiningDate: '',
-      email: '',
-      phoneNumber: '',
-      upiID: '',
-      upiname: '',
-      image: '',
-    });
-    setModal(false);
   };
 
 
@@ -224,6 +237,7 @@ const Dashboard = () => {
   return (
     <>
       <LogoutNavbar navto="manager" />
+      <Failure alert={alert} />
       <div className='overflow-x-hidden pt-[10vh] min-h-[100vh] bg-gray-800'>
         {mgr.username && (
           <div className="w-screen h-full">
