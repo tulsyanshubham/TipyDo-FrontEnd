@@ -45,7 +45,7 @@ const EmployeeLogin = () => {
   }
 
   return (
-    <section className="">
+    <section className="text-white">
       <div className="flex items-center justify-center h-[100vh] px-4 pt-10 sm:px-6 sm:py-16 lg:px-8 bg-gray-800">
 
         <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">

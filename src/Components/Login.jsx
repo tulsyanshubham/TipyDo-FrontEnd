@@ -45,18 +45,18 @@ const Login = () => {
   }
 
   return (
-    <section className="">
+    <section className="text-white">
       <div className="flex items-center justify-center h-[100vh] px-4 pt-10 sm:px-6 sm:py-16 lg:px-8 bg-gray-800">
 
         <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
 
-          <h2 className="text-2xl font-bold leading-tight text-white">Sign in to your account</h2>
-          <p className="mt-2text-sm text-gray-600 ">
+          <h2 className="text-2xl font-bold leading-tight">Sign in to your account</h2>
+          <p className="mt-2text-sm text-white/[0.7] ">
             don't have an account?{' '}
             <Link
               to="/signup"
               title=""
-              className="font-semibold text-black transition-all duration-200 hover:underline"
+              className="font-bold transition-all duration-200 hover:underline"
             >
               Create a free account
             </Link>
@@ -85,7 +85,7 @@ const Login = () => {
                     {' '}
                     Password{' '}
                   </label>
-                  <a href="#" title="" className="text-sm font-semibold text-black hover:underline">
+                  <a href="#" title="" className="text-sm font-semibold text-white/[0.7] hover:underline">
                     {' '}
                     Forgot password?{' '}
                   </a>

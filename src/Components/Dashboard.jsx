@@ -424,7 +424,7 @@ const Dashboard = () => {
                             accept="image/*"
                             name="image"
                             onChange={handleImageUpload}
-                            className="h-8 rounded-md border border-gray-300 px-3 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
+                            className="h-9 rounded-md border border-gray-300 px-3 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400"
                             title='Image Only'
                             required
                           />

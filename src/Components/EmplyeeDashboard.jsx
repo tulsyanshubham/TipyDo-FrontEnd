@@ -149,7 +149,7 @@ const EmployeeDashboard = () => {
   return (
     <>
       <LogoutNavbar navto="employee" />
-      <div className='w-[97vw] min-h-screen m-4 bg-gray-800'>
+      <div className='ms:w-[100vw] min-h-[100vh] pt-36 bg-gray-800'>
         <div className='flex flex-col items-center text-3xl font-semibold justify-center text-blue-700'>
           <h1>Employee Dashboard</h1>
           <p className='text-green-400 pt-6'>{emp.name}</p>

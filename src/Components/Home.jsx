@@ -81,7 +81,7 @@ const Home = () => {
             </div>
 
           </div>
-          <div className='w-[100vw] sm:w-[50vw] h-[50vh] sm:h-[100vh] flex items-center justify-center pt-20 rightorigin'>
+          <div className='w-[100vw] sm:w-[49vw] h-[50vh] sm:h-[100vh] flex items-center justify-center pt-20 rightorigin'>
             <div className='w-[100%] max-w-[300px] h-[300px] sm:max-w-[500px] sm:h-[400px] relative shadow-xl rounded-3xl shadow-gray-700 '>
               <div
                 style={{
